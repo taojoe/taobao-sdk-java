@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+}
+
+jar {
+    baseName = 'taobao-sdk-java'
+}
+group = 'com.github.taojoe'
+version = '20160607'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifact 'libs/taobao-sdk-java-auto_1455552377940-20160607.jar' // Publish a file created outside of the build
+            artifact source: 'libs/taobao-sdk-java-auto_1455552377940-20160607-source.jar', classifier: 'src', extension: 'jar'
+        }
+    }
+}
